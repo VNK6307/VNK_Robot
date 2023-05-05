@@ -31,6 +31,7 @@ public class Main {
         }
         System.out.println("Самое частое количество повторений " + maxKey + " (встретилось " + sizeToFreq.get(maxKey) + " раз)");
         sizeToFreq.remove(maxKey);
+        System.out.println("Другие размеры:");
         sizeToFreq.keySet()
                 .stream()
                 .forEach(key -> System.out.println("- " + key + " (" + sizeToFreq.get(key) + " раз)"));
