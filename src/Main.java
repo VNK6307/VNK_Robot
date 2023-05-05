@@ -31,8 +31,9 @@ public class Main {
         }
         System.out.println("Самое частое количество повторений " + maxKey + " (встретилось " + sizeToFreq.get(maxKey) + " раз)");
         sizeToFreq.remove(maxKey);
-        System.out.println("Другие размеры:");
-        sizeToFreq.forEach(Main::accept);
+        sizeToFreq.keySet()
+                .stream()
+                .forEach(key -> System.out.println("- " + key + " (" + sizeToFreq.get(key) + " раз)"));
     }// main
 
     public static String generateRoute(String letters, int routeLength) {
@@ -52,9 +53,5 @@ public class Main {
             }
         }
         return quantity;
-    }
-
-    private static void accept(Integer quantity, Integer frequency) {
-        System.out.println("- " + quantity + " (" + frequency + " раз)");
     }
 }// class
